@@ -10,6 +10,7 @@ on:
     - cron: '*/5 * * * *'
 jobs:
   triage:
+    timeout-minutes: ${{ fromJSON(vars.GHA_DEFAULT_TIMEOUT) }}
     runs-on: ubuntu-latest
     steps:
     - uses: bytecodealliance/subscribe-to-label-action@v1
